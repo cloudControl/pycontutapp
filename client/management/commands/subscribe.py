@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write('Successfully provide')
 
-        url_str = settings.amqpcreds['CLOUDAMQP_URL']
+        url_str = str(settings.amqpcreds['CLOUDAMQP_URL'])
         url = urlparse.urlparse(url_str)
         params = pika.ConnectionParameters(host=url.hostname, virtual_host=url.path[1:], credentials=pika.PlainCredentials(url.username, url.password))
 
