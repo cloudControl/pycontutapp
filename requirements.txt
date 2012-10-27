@@ -1,7 +1,6 @@
 django
 gunicorn
 MySQL-python==1.2.3
-pika==0.9.5
 PyYAML==3.10
 amqplib==1.0.2
 anyjson==0.3.3
