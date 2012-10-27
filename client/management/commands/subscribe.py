@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from django.core.mail import send_mail
 from pollsys import settings
 import pika
 import urlparse
@@ -21,6 +22,8 @@ class Command(BaseCommand):
         # create a function which is called on incoming messages
         def callback(ch, method, properties, body):
             print " [x] Received %r %s" % (json.loads(body), type(body))
+            contents = json.loads(body)
+            send_mail('Poll Expired', 'Poll {0} created by {1} is Expired.'.format(contents['message'], contents['created_by']), 'info@pollsys.de', [contents['email']], fail_silently=False)
 
         # set up subscription on the queue
         channel.basic_consume(callback,

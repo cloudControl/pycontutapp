@@ -8,8 +8,9 @@ try:
     data = json.load(json_data)
     postgrecreds = data['ELEPHANTSQL']
     amqpcreds = data['CLOUDAMQP']
-
+    sendgridcreds = data['SENDGRID']
     DATABASES = {'default': dj_database_url.config(default=postgrecreds['ELEPHANTSQL_URL'])}
+    
     json_data.close()
 except IOError:
     print 'Clould not open file'
@@ -21,10 +22,16 @@ except Exception:
             'NAME': '/Users/morytox/Projects/pollsys/sqlite.db',                      # Or path to database file if using sqlite3.
             'USER': '',                      # Not used with sqlite3.
             'PASSWORD': '',                  # Not used with sqlite3.
-            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
             }
     }
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = sendgridcreds['SENDGRID_USERNAME']
+EMAIL_HOST_PASSWORD = sendgridcreds['SENDGRID_PASSWORD']
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
