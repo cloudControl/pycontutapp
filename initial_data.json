@@ -1,0 +1,20 @@
+[
+  {
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "morytox", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2012-09-04T15:01:32.144Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$Bi8lI8CRtPFl$+ujeBie22OrEXr+kcPHlmfHw6AGDqi5tSfKd3N11s1M=", 
+      "email": "morytox@cctrl.de", 
+      "date_joined": "2012-09-04T15:01:32.144Z"
+    }
+  }
+]
