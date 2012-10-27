@@ -1,4 +1,4 @@
-web: python amqp/manage.py run_gunicorn --config gunicorn_config.py 0.0.0.0:$PORT
-subscribe: python amqp/manage.py subscribe
-# provide: python amqp/manage.py provide
+web: python manage.py run_gunicorn --config gunicorn_config.py 0.0.0.0:$PORT
+subscribe: python manage.py subscribe
+# provide: python manage.py provide
 syncdb: python manage.py syncdb --noinput
