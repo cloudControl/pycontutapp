@@ -49,7 +49,7 @@ def maintain(request):
 
     print('checking for ended Polls')
     # Parse CLODUAMQP_URL (fallback to localhost)
-    url_str = settings.amqpcreds['CLOUDAMQP_URL']
+    url_str = str(settings.amqpcreds['CLOUDAMQP_URL'])
     print url_str
     url = urlparse.urlparse(url_str)
     params = pika.ConnectionParameters(host=url.hostname, virtual_host=url.path[1:], credentials=pika.PlainCredentials(url.username, url.password))
