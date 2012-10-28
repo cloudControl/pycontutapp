@@ -7,6 +7,7 @@ from pollsys import settings
 import pika
 import urlparse
 import json
+import time
 from django.core.cache import cache
 
 latest_poll_list = [p for p in Poll.objects.all().order_by('-pub_date') if not p.is_expired()]
@@ -14,6 +15,7 @@ cache.set('polllist', latest_poll_list)
 
 
 def index(request):
+    time.sleep(0.5)
     return render_to_response('polls/index.html', {'latest_poll_list': cache.get('polllist')})
 
 
