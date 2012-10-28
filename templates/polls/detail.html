@@ -1,12 +1,33 @@
-<h1>{{ poll.question }}</h1>
+{% load static %}
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,target-densitydpi=device-dpi">
+		<title»Poll Question</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+</head>
+<body class="content-controller">
+		<header>
+			<a href="#" class="logo">cloudControl</a>
+		</header>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+		<section class="content">
+			<section id="content" class="clearfix black">
+				<h1>
+					{{ poll.question }}
+				</h1>
+				<div class="static-wrapper">
+					{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="/polls/{{ poll.id }}/vote/" method="post">
-{% csrf_token %}
-{% for choice in poll.choice_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br />
-{% endfor %}
-<input type="submit" value="Vote" />
-</form>
+					<form action="/polls/{{ poll.id }}/vote/" method="post">
+						{% csrf_token %}
+						{% for choice in poll.choice_set.all %}
+							<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+							<label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br />
+						{% endfor %}
+						<input type="submit" value="Vote" />
+					</form>
+				</div>
+			</section>
+		</section>
+</body></html>
