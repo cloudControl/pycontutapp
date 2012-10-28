@@ -4,12 +4,11 @@ from polls.models import Poll
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
-    #url(r'^$',
-    #    ListView.as_view(
-    #        queryset=Poll.objects.order_by('-pub_date')[:5],
-    #        context_object_name='latest_poll_list',
-    #        template_name='polls/index.html')),
-    url(r'^$', 'polls.views.index'),
+    url(r'^$',
+        ListView.as_view(
+            queryset=Poll.objects.order_by('-pub_date')[:5],
+            context_object_name='latest_poll_list',
+            template_name='polls/index.html')),
     url(r'^(?P<pk>\d+)/$',
         DetailView.as_view(
             model=Poll,

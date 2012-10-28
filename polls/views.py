@@ -15,7 +15,6 @@ cache.set('polllist', latest_poll_list)
 
 
 def index(request):
-    time.sleep(0.1)
     return render_to_response('polls/index.html', {'latest_poll_list': cache.get('polllist')})
 
 
