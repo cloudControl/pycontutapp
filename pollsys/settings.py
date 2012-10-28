@@ -10,7 +10,6 @@ try:
     postgrecreds = data['ELEPHANTSQL']
     amqpcreds = data['CLOUDAMQP']
     sendgridcreds = data['SENDGRID']
-    memcachecreds = data['MEMCACHIER']
     DATABASES = {'default': dj_database_url.config(default=postgrecreds['ELEPHANTSQL_URL'])}
 
     EMAIL_HOST = 'smtp.sendgrid.net'
