@@ -1,0 +1,397 @@
+.viewport-wrapper {
+  position: relative;
+  text-align: right;
+}
+
+#viewport .plans-wrapper {
+  left: 50%;
+  margin: 0 0 0 -900px;
+  position: absolute;
+  text-align: center;
+  width: 1800px;
+}
+
+#viewport {
+  height: 387px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  width: 776px;
+}
+
+#viewport .plans-wrapper .plans {
+  display: inline-block;
+  left: 0;
+  position: relative;
+}
+
+#viewport .plans-wrapper .plan {
+  background: white url("../images/pricing/pricing_top_noise.png") no-repeat center -14px;
+  border: 1px solid #bcbcbc;
+  display: inline-block;
+  height: 304px;
+  margin: 3px 22px 0 0;
+  position: relative;
+  width: 168px;
+}
+
+#viewport .plans-wrapper .plan.popular:after {
+  background: url(../images/most_popular.png) no-repeat 0 0;
+  content: '';
+  display: block;
+  height: 84px;
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  width: 84px;
+}
+
+#viewport .plans-wrapper .plan .hour {
+  display: none;
+}
+
+#viewport .plans-wrapper .plan .price {
+  font-size: 16px;
+  font-size: 1.6rem;
+  border-top: 2px solid #979797;
+  color: #333;
+  font-family: TitilliumText;
+  font-weight: 200;
+  height: 62px;
+  margin: 10px 10px 20px 10px;
+}
+
+#viewport .plans-wrapper .plan .price p {
+  margin: 0;
+}
+
+#viewport .plans-wrapper .plan .price strong {
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 62px;
+  line-height: 6.2rem;
+  font-weight: 300;
+}
+
+#viewport .plans-wrapper .plan h2 {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 60px;
+  line-height: 6rem;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  height: 62px;
+  margin: 0;
+}
+
+#viewport .plans-wrapper .plan ul {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 12px;
+  line-height: 1.2rem;
+  color: #858585;
+  height: 165px;
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+}
+
+#viewport .plans-wrapper .plan ul li {
+  padding: 5px;
+}
+
+#viewport .plans-wrapper .plan ul li:nth-child(odd) {
+  background: #fafafa;
+}
+
+#viewport .plans-wrapper .plan button {
+  display: inline-block;
+  width: 100px;
+}
+
+.viewport-wrapper a.scroll {
+  background: url("../images/sprites/carousel_navigation.png") no-repeat 0 0;
+  display: inline-block;
+  font-size: 0;
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  right: 24px;
+  text-indent: -999px;
+  top: 50%;
+  width: 40px;
+}
+
+.viewport-wrapper a.scroll.left {
+  background-position: 0 -51px !important;
+  left: 24px;
+}
+
+.viewport-wrapper a.scroll.left:hover {
+  background-position: 0 -153px !important;
+}
+
+.viewport-wrapper a.scroll.right:hover {
+  background-position: 0 -102px !important;
+}
+
+#toggle-pricing {
+  color: #15a3df;
+  margin: 0 24px 0 0;
+}
+
+section.content {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  margin: 20px 0 12px 0;
+  text-transform: uppercase;
+}
+
+h1 span {
+  font-weight: 200;
+  margin: 0 0 0 205px;
+  text-transform: none;
+}
+
+h1 + a {
+  color: #15a3df !important;
+  margin: 0 115px 0 0;
+  vertical-align: top;
+}
+
+.addon-view .description {
+  color: #8c8c8c;
+  display: inline-block;
+  margin: 0 15px 0 0;
+  vertical-align: top;
+  width: 460px;
+}
+
+.addon-view .information {
+  display: inline-block;
+  vertical-align: top;
+  width: 126px;
+}
+
+.addon-view .information .logo-wrapper {
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, whitesmoke 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, whitesmoke));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, whitesmoke 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, whitesmoke 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, whitesmoke 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5',GradientType=0 );
+  /* IE6-9 */
+  border: 1px solid #e9e9e9;
+  height: 125px;
+  line-height: 125px;
+  overflow: hidden;
+  text-align: center;
+  width: 125px;
+}
+
+.addon-view .information .logo-wrapper img {
+  vertical-align: middle;
+}
+
+.addon-view .information ul {
+  font-size: 12px;
+  font-size: 1.2rem;
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+}
+
+.addon-view .information ul a {
+  color: #15a3df !important;
+}
+
+aside {
+  float: left;
+  width: 244px;
+}
+
+aside ul {
+  list-style: none;
+  margin: 0;
+}
+
+aside ul li a {
+  color: #15a4df !important;
+}
+
+aside ul li a.active {
+  font-weight: bold;
+}
+
+aside .addon-provider {
+  line-height: 12px;
+  line-height: 1.2rem;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f4f4f4));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f4f4 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
+  /* IE6-9 */
+  border: 1px solid #ededed;
+  margin: 14px 0 0 24px;
+  padding: 14px;
+}
+
+aside .addon-provider p {
+  margin: 0 0 14px 0;
+}
+
+aside .addon-provider a {
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #15a4df;
+}
+
+.addons-wrapper {
+  border-left: 1px solid #e9e9e9;
+  float: left;
+  margin: 0 0 60px 36px;
+  overflow: hidden;
+  width: 620px;
+}
+
+.addons-wrapper .addon {
+  border: 1px solid #e9e9e9;
+  border-left: 0px;
+  display: none;
+  float: left;
+  height: 206px;
+  line-height: 160px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 205px;
+}
+
+.addons-wrapper .addon.stage-beta:after {
+  background: url(../images/beta.png) no-repeat 0 0;
+  content: '';
+  display: block;
+  height: 54px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 53px;
+}
+
+.addons-wrapper .addon.active {
+  display: block;
+}
+
+.addons-wrapper .addon.active:last-child {
+  border-right: 1px solid #e9e9e9;
+}
+
+.addons-wrapper .addon img {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  vertical-align: middle;
+}
+
+.addons-wrapper .addon .description {
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f4f4f4));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #f4f4f4 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f4f4 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
+  /* IE6-9 */
+  border-top: 1px solid #e9e9e9;
+  bottom: 0px;
+  color: #343434;
+  height: 50px;
+  position: absolute;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  width: 100%;
+}
+
+.addons-wrapper .addon .description h2 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 55px;
+  line-height: 5.5rem;
+  font-weight: 300;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.addons-wrapper .addon:hover .description {
+  height: 113px;
+}
+
+.addons-wrapper .addon:hover img {
+  opacity: .6;
+}
+
+.addons-wrapper .addon .description p {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 15px;
+  line-height: 1.5rem;
+  color: #8c8c8c;
+  margin: 0 10px;
+}
+
+.viewport-wrapper {
+  background: url("../images/bg_pattern.png") repeat 0 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 10px -24px 0 -24px;
+  padding: 14px 0;
+}
+
+.viewport-wrapper h2.headline {
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+
+footer {
+  clear: both;
+}
+
+.modal {
+  text-align: left;
+}
