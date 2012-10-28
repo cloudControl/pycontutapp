@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     #        queryset=Poll.objects.order_by('-pub_date')[:5],
     #        context_object_name='latest_poll_list',
     #        template_name='polls/index.html')),
-    url(r'^maintain/$', 'polls.views.index'),
+    url(r'^$', 'polls.views.index'),
     url(r'^(?P<pk>\d+)/$',
         DetailView.as_view(
             model=Poll,
