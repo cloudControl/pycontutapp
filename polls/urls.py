@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
 from polls.models import Poll
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
     url(r'^$',
@@ -19,6 +18,4 @@ urlpatterns = patterns('',
             template_name='polls/results.html'),
         name='poll_results'),
     url(r'^(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
-    url(r'^maintain/$', 'polls.views.maintain'),
 )
-urlpatterns += staticfiles_urlpatterns()
