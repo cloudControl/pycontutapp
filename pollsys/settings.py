@@ -3,6 +3,8 @@ import dj_database_url
 import os
 import json
 from datetime import timedelta
+import newrelic.agent
+
 try:
     json_data = open(os.environ["CRED_FILE"])
     data = json.load(json_data)
@@ -46,10 +48,10 @@ except Exception:
             }
     }
 
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-
-
-
+newrelic_environment = 'production'
+newrelic.agent.initialize(os.path.join(SITE_ROOT, '..', 'newrelic.ini'), newrelic_environment)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

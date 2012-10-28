@@ -12,3 +12,4 @@ pycclib==1.2.1
 wsgiref==0.1.2
 django-pylibmc-sasl==0.2.4
 pylibmc==1.2.3
+newrelic==1.0.5.156
