@@ -10,11 +10,11 @@ import json
 from django.core.cache import cache
 
 latest_poll_list = [p for p in Poll.objects.all().order_by('-pub_date') if not p.is_expired()]
-cache.set(latest_poll_list)
+cache.set('polllist', latest_poll_list)
 
 
 def index(request):
-    return render_to_response('polls/index.html', {'latest_poll_list': cache.get(latest_poll_list)})
+    return render_to_response('polls/index.html', {'latest_poll_list': cache.get('polllist')})
 
 
 def detail(request, poll_id):
