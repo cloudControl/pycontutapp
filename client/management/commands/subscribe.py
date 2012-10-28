@@ -23,6 +23,7 @@ class Command(BaseCommand):
         # create a function which is called on incoming messages
         def callback(ch, method, properties, body):
             sys.stdout.write(" [x] Received %r %s" % (json.loads(body), type(body)))
+            sys.stdout.flush()
             syslog.syslog('syslog message')
             print "printed message"
 
