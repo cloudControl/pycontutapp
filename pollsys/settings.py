@@ -57,7 +57,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Felix Knoepke', 'fk@cloudcontrol.de'),
+    # ('Felix Knoepke', 'fk+pycon@cloudcontrol.de'),
 )
 
 MANAGERS = ADMINS

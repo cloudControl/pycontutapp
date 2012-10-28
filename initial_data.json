@@ -3,18 +3,18 @@
     "pk": 1, 
     "model": "auth.user", 
     "fields": {
-      "username": "morytox", 
+      "username": "admin", 
       "first_name": "", 
       "last_name": "", 
       "is_active": true, 
       "is_superuser": true, 
       "is_staff": true, 
-      "last_login": "2012-09-04T15:01:32.144Z", 
+      "last_login": "2012-10-28T13:01:56.121Z", 
       "groups": [], 
       "user_permissions": [], 
-      "password": "pbkdf2_sha256$10000$Bi8lI8CRtPFl$+ujeBie22OrEXr+kcPHlmfHw6AGDqi5tSfKd3N11s1M=", 
-      "email": "morytox@cctrl.de", 
-      "date_joined": "2012-09-04T15:01:32.144Z"
+      "password": "pbkdf2_sha256$10000$GrhTBfEvl31Q$H11eW5zQboct4qMEjVt/6Ek59kHbR0T97WUjkOKGhdU=", 
+      "email": "fk+pycon@cloudcontrol.de", 
+      "date_joined": "2012-10-28T13:01:18.066Z"
     }
   }
 ]
