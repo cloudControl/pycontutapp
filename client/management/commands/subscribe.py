@@ -3,7 +3,6 @@ from pollsys import settings
 import pika
 import urlparse
 import json
-import sys
 import syslog
 
 
@@ -22,10 +21,7 @@ class Command(BaseCommand):
 
         # create a function which is called on incoming messages
         def callback(ch, method, properties, body):
-            sys.stdout.write(" [x] Received %r %s" % (json.loads(body), type(body)))
-            sys.stdout.flush()
-            syslog.syslog('syslog message')
-            print "printed message"
+            syslog.syslog(" [x] Received %r %s" % (json.loads(body), type(body)))
 
         # set up subscription on the queue
         channel.basic_consume(callback,
