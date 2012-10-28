@@ -4,6 +4,7 @@ from pollsys import settings
 import pika
 import urlparse
 import json
+import syslog
 
 
 class Command(BaseCommand):
@@ -21,7 +22,7 @@ class Command(BaseCommand):
 
         # create a function which is called on incoming messages
         def callback(ch, method, properties, body):
-            print " [x] Received %r %s" % (json.loads(body), type(body))
+            syslog.syslog(" [x] Received %r %s" % (json.loads(body), type(body)))
             contents = json.loads(body)
             send_mail('Poll Expired', 'Poll {0} created by {1} is Expired.'.format(contents['message'], contents['created_by']), 'info@pollsys.de', [contents['email']], fail_silently=False)
 

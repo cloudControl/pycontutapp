@@ -3,7 +3,6 @@ import dj_database_url
 import os
 import json
 from datetime import timedelta
-import newrelic.agent
 
 try:
     json_data = open(os.environ["CRED_FILE"])
@@ -13,18 +12,6 @@ try:
     sendgridcreds = data['SENDGRID']
     memcachecreds = data['MEMCACHIER']
     DATABASES = {'default': dj_database_url.config(default=postgrecreds['ELEPHANTSQL_URL'])}
-
-    os.environ['MEMCACHE_USERNAME'] = memcachecreds['MEMCACHIER_USERNAME']
-    os.environ['MEMCACHE_PASSWORD'] = memcachecreds['MEMCACHIER_PASSWORD']
-
-    CACHES = {
-        'default': {
-        'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
-        'LOCATION': memcachecreds['MEMCACHIER_SERVERS'],
-        'TIMEOUT': 500,
-        'BINARY': True,
-        }
-    }
 
     EMAIL_HOST = 'smtp.sendgrid.net'
     EMAIL_HOST_USER = sendgridcreds['SENDGRID_USERNAME']
@@ -50,8 +37,6 @@ except Exception:
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-newrelic_environment = 'production'
-newrelic.agent.initialize(os.path.join(SITE_ROOT, '..', 'newrelic.ini'), newrelic_environment)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -61,17 +46,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-#DATABASES = {
-#            'default': {
-#            'ENGINE': 'django.db.backends.mysql',  #'django.db.backends.sqlite3', Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#            'NAME': sqlscreds['MYSQLS_DATABASE'],                      # Or path to database file if using sqlite3.
-#            'USER': sqlscreds['MYSQLS_USERNAME'],                      # Not used with sqlite3.
-#            'PASSWORD': sqlscreds['MYSQLS_PASSWORD'],                  # Not used with sqlite3.
-#            'HOST': sqlscreds['MYSQLS_HOSTNAME'],                      # Set to empty string for localhost. Not used with sqlite3.
-#            'PORT': sqlscreds['MYSQLS_PORT'],                      # Set to empty string for default. Not used with sqlite3.
-#            }
-#}
 
 
 # Local time zone for this installation. Choices can be found here:
@@ -189,7 +163,6 @@ INSTALLED_APPS = (
     'polls',
     'gunicorn',
     'client',
-    'provider',
 )
 
 # A sample logging configuration. The only tangible logging
