@@ -44,13 +44,13 @@
 }
 
 html {
-  background: url("../statc/images/bg_noise.jpg") repeat 0 0;
+  background: url("../images/bg_noise.jpg") repeat 0 0;
   height: 100%;
   font: 62.5%/20pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 html.wooden {
-  background: url("../statc/images/wood.png") repeat 0 0;
+  background: url("../images/wood.png") repeat 0 0;
 }
 
 body {
@@ -67,7 +67,7 @@ body {
 }
 
 body:after {
-  background: url("../statc/images/footer.png") no-repeat bottom center;
+  background: url("../images/footer.png") no-repeat bottom center;
   bottom: 40px;
   content: '';
   height: 93px;
@@ -180,7 +180,7 @@ header {
 }
 
 header .logo {
-  background: url("../statc/images/logo.png") no-repeat 0 0;
+  background: url("../images/logo.png") no-repeat 0 0;
   display: inline-block;
   height: 66px;
   overflow: hidden;
