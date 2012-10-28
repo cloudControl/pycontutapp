@@ -10,3 +10,5 @@ pika==0.9.5
 psycopg2==2.4.5
 pycclib==1.2.1
 wsgiref==0.1.2
+django-pylibmc-sasl==0.2.4
+pylibmc==1.2.3

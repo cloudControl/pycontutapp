@@ -3,16 +3,18 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from polls.models import Choice, Poll
-import pycclib
 from pollsys import settings
 import pika
 import urlparse
 import json
+from django.core.cache import cache
+
+latest_poll_list = [p for p in Poll.objects.all().order_by('-pub_date') if not p.is_expired()]
+cache.set(latest_poll_list)
 
 
 def index(request):
-    latest_poll_list = [p for p in Poll.objects.all().order_by('-pub_date') if not p.is_expired()]
-    return render_to_response('polls/index.html', {'latest_poll_list': latest_poll_list})
+    return render_to_response('polls/index.html', {'latest_poll_list': cache.get(latest_poll_list)})
 
 
 def detail(request, poll_id):

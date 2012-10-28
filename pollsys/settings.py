@@ -9,8 +9,27 @@ try:
     postgrecreds = data['ELEPHANTSQL']
     amqpcreds = data['CLOUDAMQP']
     sendgridcreds = data['SENDGRID']
+    memcachecreds = data['MEMCACHIER']
     DATABASES = {'default': dj_database_url.config(default=postgrecreds['ELEPHANTSQL_URL'])}
-    
+
+    os.environ['MEMCACHE_USERNAME'] = memcachecreds['MEMCACHIER_USERNAME']
+    os.environ['MEMCACHE_PASSWORD'] = memcachecreds['MEMCACHIER_PASSWORD']
+
+    CACHES = {
+        'default': {
+        'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+        'LOCATION': memcachecreds['MEMCACHIER_SERVERS'],
+        'TIMEOUT': 500,
+        'BINARY': True,
+        }
+    }
+
+    EMAIL_HOST = 'smtp.sendgrid.net'
+    EMAIL_HOST_USER = sendgridcreds['SENDGRID_USERNAME']
+    EMAIL_HOST_PASSWORD = sendgridcreds['SENDGRID_PASSWORD']
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+
     json_data.close()
 except IOError:
     print 'Clould not open file'
@@ -27,11 +46,10 @@ except Exception:
             }
     }
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = sendgridcreds['SENDGRID_USERNAME']
-EMAIL_HOST_PASSWORD = sendgridcreds['SENDGRID_PASSWORD']
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+
+
+
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
